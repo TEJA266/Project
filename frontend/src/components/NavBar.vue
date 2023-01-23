@@ -54,8 +54,53 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/profile">Profile</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link class="nav-link" to="/login">Log In</router-link>
+        </li> -->
+        <!-- <li>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            @click="toggleLoginDropdown"
+          >
+            Log In
+          </a>
+          <div
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+            :style="isDropdownOpen ? 'display: block; right: 0;' : ''"
+          >
+            <router-link class="dropdown-item" to="/user-login"
+              >User</router-link
+            >
+            <router-link class="dropdown-item" to="/merchant-login"
+              >Merchant</router-link
+            >
+          </div>
         </li>
       </ul>
     </div>
@@ -66,9 +111,15 @@
 export default {
   name: "NavBar",
   data() {
-    return {};
+    return {
+      isDropdownOpen: false,
+    };
   },
-  methods: {},
+  methods: {
+    toggleLoginDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+  },
   mounted() {},
 };
 </script>
