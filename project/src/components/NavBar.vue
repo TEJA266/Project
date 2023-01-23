@@ -126,8 +126,7 @@
   </nav>
 </template>
 <script>
-// import swal from "sweetalert";
-import VueSweetalert2 from 'vue-sweetalert2';
+import swal from "sweetalert";
 export default {
   name: "NavBar",
   props: ["cartCount"],
@@ -143,7 +142,7 @@ export default {
       localStorage.removeItem("userId");
       this.token = null;
       this.user = null;
-      VueSweetalert2({
+      swal({
         text: "Logged you out. Visit again",
         icon: "success",
       });
