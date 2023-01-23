@@ -94,7 +94,7 @@
             aria-labelledby="navbarDropdown"
             :style="isDropdownOpen ? 'display: block; right: 0;' : ''"
           >
-            <router-link class="dropdown-item" to="/user-login"
+            <router-link class="dropdown-item" to="/userlogin"
               >User</router-link
             >
             <router-link class="dropdown-item" to="/merchant-login"
