@@ -5,6 +5,7 @@ import UserLogIn from "../views/UserLogIn.vue";
 import ProductsList from "../views/ProductsList.vue";
 import MerchantCRUD from "../components/Merchant/MerchantCRUD.vue";
 import MerchantAddProducts from "../components/Merchant/MerchantAddProducts.vue";
+import MerchantAddNewProduct from "../components/Merchant/MerchantAddNewProduct.vue";
 import MerchantDeleteProducts from "../components/Merchant/MerchantDeleteProducts.vue";
 import MerchantUpdateProducts from "../components/Merchant/MerchantUpdateProducts.vue";
 import MerchantViewProducts from "../components/Merchant/MerchantViewProducts.vue";
@@ -48,18 +49,23 @@ const routes = [
     component: MerchantCRUD,
     children: [
       {
-        path: "addproducts",
-        name: "addproducts",
+        path: "addnewproduct",
+        name: "addnewproduct",
+        component: MerchantAddNewProduct,
+      },
+      {
+        path: "addproduct",
+        name: "addproduct",
         component: MerchantAddProducts,
       },
       {
-        path: "deleteproducts",
-        name: "deleteproducts",
+        path: "deleteproduct",
+        name: "deleteproduct",
         component: MerchantDeleteProducts,
       },
       {
-        path: "updateproducts",
-        name: "updateproducts",
+        path: "updateproduct",
+        name: "updateproduct",
         component: MerchantUpdateProducts,
       },
       {

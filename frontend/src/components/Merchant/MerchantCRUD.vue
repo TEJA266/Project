@@ -1,26 +1,3 @@
-<!-- <template>
-  <div>
-    <center v-if="!isMainRoute">
-      <button
-        type="button"
-        class="btn btn-secondary"
-        @click="$router.push('/merchant/addproducts')"
-      >
-        Add Product</button
-      ><br />
-      <button type="button" class="btn btn-secondary" @click="deleteProduct">
-        Delete Product</button
-      ><br />
-      <button type="button" class="btn btn-secondary" @click="updateProduct">
-        Update Product</button
-      ><br />
-      <button type="button" class="btn btn-secondary" @click="viewProducts">
-        View Products</button
-      ><br />
-    </center>
-    <router-view />
-  </div>
-</template> -->
 <template>
   <div>
     <center v-if="!isMainRoute">
@@ -29,7 +6,16 @@
           <button
             type="button"
             class="btn btn-secondary"
-            @click="$router.push('/merchant/addproducts')"
+            @click="$router.push('/merchant/addnewproduct')"
+          >
+            Introduce a new product to market
+          </button>
+        </div>
+        <div class="p-2">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$router.push('/merchant/addproduct')"
           >
             Add a new Product
           </button>
@@ -74,17 +60,21 @@ export default {
       "deleteProductFromList",
       "updateProductOnList",
     ]),
+    addnewProduct() {
+      // router.push({ name: "AddProduct" });
+      this.$router.push({ path: "/merchant/addnewproduct" });
+    },
     addProduct() {
       // router.push({ name: "AddProduct" });
-      this.$router.push({ path: "/merchant/addproducts" });
+      this.$router.push({ path: "/merchant/addproduct" });
     },
     deleteProduct() {
       // this.deleteProductFromList();
-      this.$router.push({ path: "/merchant/deleteproducts" });
+      this.$router.push({ path: "/merchant/deleteproduct" });
     },
     updateProduct() {
       // router.push({ name: "UpdateProduct" });
-      this.$router.push({ path: "/merchant/updateproducts" });
+      this.$router.push({ path: "/merchant/updateproduct" });
     },
     viewProducts() {
       // router.push({ name: "ProductList" });
@@ -95,9 +85,10 @@ export default {
     ...mapState(["products"]),
     isMainRoute() {
       return (
-        this.$route.path.includes("addproducts") ||
-        this.$route.path.includes("deleteproducts") ||
-        this.$route.path.includes("updateproducts") ||
+        this.$route.path.includes("addnewproduct") ||
+        this.$route.path.includes("addproduct") ||
+        this.$route.path.includes("deleteproduct") ||
+        this.$route.path.includes("updateproduct") ||
         this.$route.path.includes("viewproducts")
       );
     },

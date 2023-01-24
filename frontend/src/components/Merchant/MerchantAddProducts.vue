@@ -1,6 +1,3 @@
 <template>
-  <div>
-    <div class="container"></div>
-  </div>
+  <div>Add Products</div>
 </template>
-<script></script>
