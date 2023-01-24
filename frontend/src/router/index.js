@@ -48,22 +48,22 @@ const routes = [
     component: MerchantCRUD,
     children: [
       {
-        path: "/addproducts",
+        path: "addproducts",
         name: "addproducts",
         component: MerchantAddProducts,
       },
       {
-        path: "/deleteproducts",
+        path: "deleteproducts",
         name: "deleteproducts",
         component: MerchantDeleteProducts,
       },
       {
-        path: "/updateproducts",
+        path: "updateproducts",
         name: "updateproducts",
         component: MerchantUpdateProducts,
       },
       {
-        path: "/viewproducts",
+        path: "viewproducts",
         name: "viewproducts",
         component: MerchantViewProducts,
       },
