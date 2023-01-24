@@ -1,9 +1,15 @@
 <template>
-  <div>Merchant Crud</div>
+  <div>
+    <div>
+      
+    </div>
+  </div>
 </template>
 <script>
 export default {
-  data() {},
+  data() {
+    return {};
+  },
 };
 </script>
 <style></style>

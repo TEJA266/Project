@@ -3,9 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import UserLogIn from "../views/UserLogIn.vue";
 import ProductsList from "../views/ProductsList.vue";
-import LoginView from "../views/LoginView.vue";
-import RegisterView from "../views/RegisterView.vue";
-import SecretView from "../views/SecretView.vue";
+import MerchantCRUD from "../components/MerchantCRUD.vue";
 
 Vue.use(VueRouter);
 
@@ -14,21 +12,6 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-  },
-  {
-    path: "/login",
-    name: "loginview",
-    component: LoginView,
-  },
-  {
-    path: "/register",
-    name: "registerview",
-    component: RegisterView,
-  },
-  {
-    path: "/secret",
-    name: "secretview",
-    component: SecretView,
   },
   {
     path: "/products",
@@ -54,6 +37,11 @@ const routes = [
     path: "/userlogin",
     name: "login",
     component: UserLogIn,
+  },
+  {
+    path: "/merchant",
+    name: "merchant",
+    component: MerchantCRUD,
   },
 ];
 
