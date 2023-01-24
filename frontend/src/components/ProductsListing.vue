@@ -6,9 +6,9 @@
       <p>{{ product.description }}</p>
       <p>{{ product.price }}</p>
       <button class="button" @click="selectProducts(product)">
-        Product Details
+        Add to cart
       </button>
-      <!-- <button class="button">Buynow</button> -->
+      <button class="button">Buynow</button>
     </div>
   </div>
 </template>
