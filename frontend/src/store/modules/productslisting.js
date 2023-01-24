@@ -12,9 +12,10 @@ export default {
   },
   actions: {
     getProductListApi: ({ commit }, { success }) => {
-      fetch("https://dummyjson.com/products")
+      fetch("/api/products/allProducts")
         .then((response) => response.json())
         .then((res) => {
+          console.log(res);
           commit("setProductsList", res);
           success && success(res);
         });

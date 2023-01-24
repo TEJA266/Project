@@ -2,13 +2,13 @@
   <div class="MyFirstView">
     <h1>Product DETAILS Page</h1>
     <img
-      :src="products[index - 1].images[0]"
+      :src="products[index - 1].imgsrc"
       style="height: 40vh; width: 30vh"
     /><br />
-    {{ products[index - 1].title }}<br />
+    {{ products[index - 1].name }}<br />
     {{ products[index - 1].price }}<br />
-    {{ products[index - 1].brand }}<br />
-    {{ products[index - 1].category }}<br />
+    <!-- {{ products[index - 1].brand }}<br /> -->
+    <!-- {{ products[index - 1].category }}<br /> -->
     {{ products[index - 1].description }}<br />
     <button>Add To Cart</button>
     <button>Buy Now</button>

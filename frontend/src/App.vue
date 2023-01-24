@@ -7,6 +7,9 @@
     <router-view />
   </div> -->
   <div id="app">
+    <router-link to="/login">Login</router-link>
+    <router-link to="/register">Register</router-link>
+    <router-link to="/secret">Secret</router-link>
     <NavBar />
     <router-view />
   </div>

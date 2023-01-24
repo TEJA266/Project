@@ -15,7 +15,7 @@
 </template> -->
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">My E-Commerce Site</a>
+    <a class="navbar-brand" href="#">Deals on Net</a>
     <button
       class="navbar-toggler"
       type="button"
