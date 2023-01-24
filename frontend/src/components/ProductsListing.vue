@@ -7,7 +7,7 @@
         <p>{{ product.description }}</p>
         <p>{{ product.price }}</p>
       </div>
-      <button class="button">Add to cart</button>
+      <button class="button">Add to cart </button>
       <button class="button">Buynow</button>
     </div>
   </div>

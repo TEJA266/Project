@@ -15,7 +15,8 @@
 </template> -->
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Deals on Net</a>
+    <router-link class="navbar-brand" to="/">Deals on Net</router-link>
+    <!-- <a class="navbar-brand" href="#">Deals on Net</a> -->
     <button
       class="navbar-toggler"
       type="button"
@@ -48,9 +49,16 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/products">Products</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link class="nav-link" to="/cart">Cart</router-link>
+        </li> -->
+        <li class="nav-item">
+          <router-link class="nav-link" to="/cart">
+            <i class="fas fa-shopping-cart"></i>
+            Cart
+          </router-link>
         </li>
+
         <li class="nav-item">
           <router-link class="nav-link" to="/profile">Profile</router-link>
         </li>

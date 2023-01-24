@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import UserLogIn from "../views/UserLogIn.vue";
+import UserRegistration from "../views/UserRegistration.vue";
 import ProductsList from "../views/ProductsList.vue";
 import MerchantCRUD from "../components/Merchant/MerchantCRUD.vue";
 import MerchantAddProducts from "../components/Merchant/MerchantAddProducts.vue";
@@ -42,6 +43,11 @@ const routes = [
     path: "/userlogin",
     name: "login",
     component: UserLogIn,
+  },
+  {
+    path: "/userregistration",
+    name: "login",
+    component: UserRegistration,
   },
   {
     path: "/merchant",

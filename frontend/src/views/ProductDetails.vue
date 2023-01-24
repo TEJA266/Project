@@ -10,14 +10,22 @@
     <!-- {{ selectedProduct.brand }}<br /> -->
     <!-- {{ selectedProduct.category }}<br /> -->
     {{ selectedProduct.description }}<br />
-    <button>Add To Cart</button>
+    <button @click="addToCart">Add To Cart</button>
     <button>Buy Now</button>
   </div>
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
+import axios from "axios";
 export default {
   name: "ProductDetails",
+  productId() {
+    console.log("id: ", this.selectedProduct.productId);
+    return this.selectedProduct.productId;
+  },
+  userId() {
+    return this.selectedProduct.userId;
+  },
   data() {
     return {
       products: [],
@@ -46,7 +54,23 @@ export default {
     });
   },
   methods: {
-    ...mapActions(["getProductListApi"]),
+    ...mapActions(["getProductListApi", "SET_CART_LIST"]),
+    addToCart() {
+      const requestBody = {
+        productId: this.productId,
+        userId: this.userId,
+        cartid: this.cartId,
+      };
+      axios
+        .post("url", requestBody)
+        .then((response) => {
+          console.log(response);
+          this.SET_CART_LIST(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
