@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div v-for="product in getProductsList" :key="product.id" class="inner">
-      <img :src="product.imgSrc" />
-      <h2>{{ product.name }}</h2>
-      <p>{{ product.description }}</p>
-      <p>{{ product.price }}</p>
-      <button class="button" @click="selectProducts(product)">
-        Add to cart
-      </button>
+      <div @click="selectProducts(product)">
+        <img :src="product.imgSrc" />
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+      </div>
+      <button class="button">Add to cart</button>
       <button class="button">Buynow</button>
     </div>
   </div>

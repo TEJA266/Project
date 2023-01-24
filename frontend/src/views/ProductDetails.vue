@@ -2,14 +2,14 @@
   <div class="MyFirstView">
     <h1>Product DETAILS Page</h1>
     <img
-      :src="products[index - 1].imgsrc"
+      :src="selectedProduct.imgSrc"
       style="height: 40vh; width: 30vh"
     /><br />
-    {{ products[index - 1].name }}<br />
-    {{ products[index - 1].price }}<br />
-    <!-- {{ products[index - 1].brand }}<br /> -->
-    <!-- {{ products[index - 1].category }}<br /> -->
-    {{ products[index - 1].description }}<br />
+    {{ selectedProduct.name }}<br />
+    {{ selectedProduct.price }}<br />
+    <!-- {{ selectedProduct.brand }}<br /> -->
+    <!-- {{ selectedProduct.category }}<br /> -->
+    {{ selectedProduct.description }}<br />
     <button>Add To Cart</button>
     <button>Buy Now</button>
   </div>
@@ -18,22 +18,23 @@
 import { mapActions, mapGetters } from "vuex";
 export default {
   name: "ProductDetails",
-  computed: {
-    ...mapGetters(["getProductsList"]),
-  },
   data() {
     return {
       products: [],
       index: 0,
     };
   },
-  methods: {
-    ...mapActions(["getProductListApi"]),
+  computed: {
+    ...mapGetters(["getProductsList"]),
+    selectedProduct() {
+      return (
+        this.getProductsList.find((product) => product.id === this.index) || {}
+      );
+    },
   },
   mounted() {
     console.log("params", this.$route.params);
     this.index = this.$route.params.id;
-    console.log("query", this.$route.query);
     console.log("from product Details page", this.products);
   },
   created: function () {
@@ -43,6 +44,9 @@ export default {
         console.log(this.products);
       },
     });
+  },
+  methods: {
+    ...mapActions(["getProductListApi"]),
   },
 };
 </script>
