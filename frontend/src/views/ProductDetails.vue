@@ -62,7 +62,7 @@ export default {
         cartid: this.cartId,
       };
       axios
-        .post("url", requestBody)
+        .post("http://10.20.5.47:8087/addToCart/1", requestBody)
         .then((response) => {
           console.log(response);
           this.SET_CART_LIST(response.data);

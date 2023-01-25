@@ -13,6 +13,7 @@
             <form>
               <div class="form-floating mb-3">
                 <input
+                  v-model="email"
                   type="email"
                   class="form-control"
                   id="floatingInputEmail"
@@ -23,6 +24,7 @@
               <hr />
               <div class="form-floating mb-3">
                 <input
+                  v-model="password"
                   type="password"
                   class="form-control"
                   id="floatingPassword"
@@ -35,6 +37,7 @@
                 <button
                   class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
                   type="submit"
+                  @click.prevent="submitForm"
                 >
                   Sign In
                 </button>
@@ -49,6 +52,7 @@
                 <button
                   class="btn btn-lg btn-google btn-login fw-bold text-uppercase"
                   type="submit"
+                  @click.prevent="submitGoogle"
                 >
                   <i class="fab fa-google me-2"></i> Sign up with Google
                 </button>
@@ -57,6 +61,7 @@
                 <button
                   class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase"
                   type="submit"
+                  @click.prevent="submitFacebook"
                 >
                   <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
                 </button>
@@ -68,7 +73,21 @@
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    submitForm() {},
+    submitGoogle() {},
+    submitFacebook() {},
+  },
+};
+</script>
 <style scoped>
 body {
   background: #007bff;

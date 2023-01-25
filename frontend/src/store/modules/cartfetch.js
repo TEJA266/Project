@@ -11,7 +11,7 @@ export default {
   },
   actions: {
     getItemsCartListApi: ({ commit }, { success }) => {
-      fetch("http://192.168.183.107:8082/cart/GetAllCartProducts/jash_uid")
+      fetch("http://10.20.5.47:8082/cart/GetAllCartProducts/jash_uid")
         .then((resp) => resp.json())
         .then((res) => {
           commit("setItemsCartList", res);
