@@ -3,20 +3,15 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import axios from "axios";
+import { initializeApp } from "firebase/app";
+// import { createApp } from "vue";
 
 // import firebase from "firebase/app";
-import firebase from "firebase/compat/app";
+// import firebase from "firebase/compat/app";
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 
-/* <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  Your web app's Firebase configuration */
 const firebaseConfig = {
   apiKey: "AIzaSyAIEOmwR8DJ2ZgI5np1YrfUWA2Dcz7n1IE",
   authDomain: "ecommerce-22b25.firebaseapp.com",
@@ -31,7 +26,13 @@ const firebaseConfig = {
 
 // </script>
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+
+// const app = createApp(App);
+
+// app.use(router);
+
+// app.mount("#app");
 
 new Vue({
   router,
