@@ -10,6 +10,8 @@ import MerchantAddNewProduct from "../components/Merchant/MerchantAddNewProduct.
 import MerchantDeleteProducts from "../components/Merchant/MerchantDeleteProducts.vue";
 import MerchantUpdateProducts from "../components/Merchant/MerchantUpdateProducts.vue";
 import MerchantViewProducts from "../components/Merchant/MerchantViewProducts.vue";
+import CartView from "../views/CartView.vue";
+import ProfileView from "../views/ProfileView.vue";
 
 Vue.use(VueRouter);
 
@@ -40,13 +42,23 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
+    path: "/cart",
+    name: "cart",
+    component: CartView,
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: ProfileView,
+  },
+  {
     path: "/userlogin",
     name: "login",
     component: UserLogIn,
   },
   {
     path: "/userregistration",
-    name: "login",
+    name: "userregistration",
     component: UserRegistration,
   },
   {

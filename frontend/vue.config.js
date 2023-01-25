@@ -12,7 +12,12 @@ module.exports = defineConfig({
         target: 'http://10.20.5.47:8085',
         changeOrigin: true,
         pathRewrite: {'^/api' : ''},
-      } 
+      },
+      '^/api/profile': {
+        target: 'http://10.20.3.91:8091',
+        changeOrigin: true,
+        pathRewrite: {'^/api' : ''},
+      }  
   }
 }
 });
