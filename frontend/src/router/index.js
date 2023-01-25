@@ -2,7 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import UserLogIn from "../views/UserLogIn.vue";
+import MerchantLogIn from "../views/MerchantLogIn.vue";
 import UserRegistration from "../views/UserRegistration.vue";
+import MerchantRegistration from "../views/MerchantRegistration.vue";
 import ProductsList from "../views/ProductsList.vue";
 import MerchantCRUD from "../components/Merchant/MerchantCRUD.vue";
 import MerchantAddProducts from "../components/Merchant/MerchantAddProducts.vue";
@@ -62,8 +64,18 @@ const routes = [
     component: UserRegistration,
   },
   {
-    path: "/merchant",
-    name: "merchant",
+    path: "/merchantlogin",
+    name: "merchantlogin",
+    component: MerchantLogIn,
+  },
+  {
+    path: "/merchantregistration",
+    name: "merchantregistration",
+    component: MerchantRegistration,
+  },
+  {
+    path: "/merchantcrud",
+    name: "merchantcrud",
     component: MerchantCRUD,
     children: [
       {

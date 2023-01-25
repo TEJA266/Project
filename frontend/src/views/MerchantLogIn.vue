@@ -67,7 +67,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 export default {
-  name: "UserLogIn",
+  name: "MerchantLogIn",
   data() {
     return {
       email: "",
@@ -81,7 +81,7 @@ export default {
           .auth()
           .signInWithEmailAndPassword(this.email, this.password);
         alert("Logged in");
-        this.$router.push("/");
+        this.$router.push("/merchantcrud");
       } catch (err) {
         alert("Not an Valid User");
       }
@@ -91,7 +91,7 @@ export default {
       signInWithPopup(getAuth(), provider)
         .then((result) => {
           console.log(result.user);
-          this.$router.push("/");
+          this.$router.push("/merchantcrud");
         })
         .catch((error) => {
           console.log(error);

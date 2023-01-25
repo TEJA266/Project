@@ -2,11 +2,18 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/database";
+import "firebase/compat/firestore";
 import axios from "axios";
-import { initializeApp } from "firebase/app";
+Vue.prototype.$http = axios;
+Vue.config.productionTip = false;
+import "firebase/compat/database";
+// import { initializeApp } from "firebase/app";
 // import { createApp } from "vue";
 
-// import firebase from "firebase/app";
+// import firebase from "firebase";
 // import firebase from "firebase/compat/app";
 
 Vue.prototype.$axios = axios;
@@ -21,18 +28,13 @@ const firebaseConfig = {
   appId: "1:794859304783:web:c060713d499673fe22773a",
 };
 
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-// </script>
+const auth = firebase.default.auth();
+const database = firebase.default.database();
+export { auth, database };
 
-initializeApp(firebaseConfig);
-
-// const app = createApp(App);
-
-// app.use(router);
-
-// app.mount("#app");
+firebase.initializeApp(firebaseConfig);
 
 new Vue({
   router,

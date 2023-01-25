@@ -68,8 +68,8 @@
                 >Have an account? Sign In</router-link
               >
               <!-- <a class="d-block text-center mt-2 small" href="#"
-                  >Have an account? Sign In</a
-                > -->
+                    >Have an account? Sign In</a
+                  > -->
               <hr class="my-4" />
               <div class="d-grid mb-2">
                 <button
@@ -95,7 +95,7 @@ import { mapActions } from "vuex";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 export default {
-  name: "UserRegistration",
+  name: "MerchantRegistration",
   data() {
     return {
       username: "",
@@ -138,7 +138,7 @@ export default {
 
         //console.log(user);
         alert("Registered New User");
-        this.$router.push("/");
+        this.$router.push("/merchantcrud");
       } catch (err) {
         console.log(err);
         alert(err);
@@ -149,7 +149,7 @@ export default {
       signInWithPopup(getAuth(), provider)
         .then((result) => {
           console.log(result.user);
-          this.$router.push("/");
+          this.$router.push("/merchantcrud");
         })
         .catch((error) => {
           console.log(error);

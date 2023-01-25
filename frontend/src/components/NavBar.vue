@@ -83,7 +83,7 @@
             <router-link class="dropdown-item" to="/userlogin"
               >User</router-link
             >
-            <router-link class="dropdown-item" to="/merchant"
+            <router-link class="dropdown-item" to="/merchantregistration"
               >Merchant</router-link
             >
           </div>
